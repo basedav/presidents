@@ -8,6 +8,7 @@ export default new Vuex.Store({
     cards: [],
     current_hand: Array,
     current_hand_desc: '',
+    current_hand_str: '',
     stored_hands: [],
   },
   getters: {
@@ -33,6 +34,9 @@ export default new Vuex.Store({
     },
     SOCKET_UPDATE_CURRENT_HAND_DESC (state, payload) {
       state.current_hand_desc = payload.desc
+    },
+    SOCKET_UPDATE_CURRENT_HAND_STR (state, payload) {
+      state.current_hand_str = payload.str  
     },
     SOCKET_ADD_CARD (state, payload) {
       state.cards.push({
