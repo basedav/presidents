@@ -23,6 +23,9 @@ export default new Vuex.Store({
     },
     stored_hands (state) {
       return state.stored_hands
+    },
+    current_hand_str (state) {
+      return state.current_hand_str
     }
   },
   mutations: {

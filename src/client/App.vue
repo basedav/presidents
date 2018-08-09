@@ -2,6 +2,7 @@
   <div id="app">
     <StoredHandBox/>
     <ButtonBox/>
+    <CurrentHandBox/>
     <CardBox/>
   </div>
 </template>
@@ -13,6 +14,7 @@ import CardBox from './components/CardBox'
 import ButtonBox from './components/ButtonBox'
 import Hand from './components/Hand'
 import StoredHandBox from './components/StoredHandBox'
+import CurrentHandBox from './components/CurrentHandBox'
 
 export default {
   name: 'app',
@@ -21,7 +23,8 @@ export default {
     CardBox,
     ButtonBox,
     Hand,
-    StoredHandBox
+    StoredHandBox,
+    CurrentHandBox
   }
 }
 </script>
