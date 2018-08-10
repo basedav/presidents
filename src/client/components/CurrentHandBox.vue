@@ -13,7 +13,6 @@ export default {
     ...mapGetters(['current_hand_str'])
   }
 }
-
 </script>
 <style>
 

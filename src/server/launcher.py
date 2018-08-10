@@ -75,10 +75,18 @@ def select_hand(payload):
 
 @socketio.on('store current hand')
 def store_current_hand():
-    chamber.add_hand(hand)
-    hand.reset()
-    emit('update_current_hand_desc', {'desc': hand.id_desc})
-    emit('update_current_hand_str', {'str': str(hand)})
+    if not hand.is_valid:
+        emit_alert('fucking faggot')
+        return
+    else:
+        chamber.add_hand(hand)
+        hand.reset()
+        emit('update_current_hand_desc', {'desc': hand.id_desc})
+        emit('update_current_hand_str', {'str': str(hand)})
+
+def emit_alert(alert: str) -> None:
+    emit('alert', {'alert': alert})
+
 
 if __name__ == '__main__':
     socketio.run(app, host='0.0.0.0', debug=True)

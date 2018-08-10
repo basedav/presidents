@@ -3,12 +3,15 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+
 export default new Vuex.Store({
   state: {
     cards: [],
     current_hand: Array,
     current_hand_desc: '',
     current_hand_str: '',
+    alert: '',
+    // snackbar: false,
     stored_hands: [],
   },
   getters: {
@@ -24,6 +27,12 @@ export default new Vuex.Store({
     stored_hands (state) {
       return state.stored_hands
     },
+    alert (state) {
+      return state.alert
+    },
+    // snackbar (state) {
+    //   return state.snackbar
+    // },
     current_hand_str (state) {
       return state.current_hand_str
     }
@@ -79,6 +88,10 @@ export default new Vuex.Store({
         'cards': stored_hands[i].cards,
         'is_selected': false
       })
+    },
+    SOCKET_ALERT (state, payload) {
+      state.alert = payload.alert
+      Vue.$snackbar.show(payload.alert)
     },
     SOCKET_DESELECT_ALL_HANDS (state, payload) {
       for (var i = 0; i < state.stored_hands.length; i += 1) {
