@@ -78,6 +78,9 @@ def store_current_hand():
     if not hand.is_valid:
         emit_alert('fucking faggot')
         return
+    elif hand.is_single:
+        emit_alert('cant store a single bitch')
+        return
     else:
         chamber.add_hand(hand)
         hand.reset()
