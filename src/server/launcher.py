@@ -76,7 +76,7 @@ def select_hand(payload):
 @socketio.on('store current hand')
 def store_current_hand():
     if not hand.is_valid:
-        emit_alert('fucking faggot')
+        emit_alert('thats not a hand dumbass')
         return
     elif hand.is_single:
         emit_alert('cant store a single bitch')
