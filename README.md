@@ -2,7 +2,7 @@
 
 an addictive card game that's easy to learn
 
-try it out with 3 of your friends at [presidents.cards](https://presidents.cards)
+~try it out with 3 of your friends at [presidents.cards](https://presidents.cards)~ (NO LONGER DEPLOYED might rework later ...)
 
 * backend
     * [FastAPI](https://github.com/tiangolo/fastapi) async web framework
